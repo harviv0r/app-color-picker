@@ -1,27 +1,34 @@
 # AppColorPickerPort
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+The next mini project is a color picker with 3 options:
+1. Random basic colors without repeating when clicking. The colors are extracted from a **colors** array in the .ts
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+`colors = ["green", "red", "yellow", "blue"];`
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Captura desde 2022-05-31 21-06-00](https://user-images.githubusercontent.com/106542070/171318304-01b29a45-8765-4d52-844e-55f99b93bb84.png)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Random hex colors on click. The colors are extracted from an array **colors**
+`colors = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b ", "c", "d", "f"];` and a string `randomi = "#";`
+Clicking calls
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+` for (let i = 0; i < 6; i++) {  
+      this.randomi += (this.colors[(Math.floor(Math.random() * this.colors.length))]);
+  }`
+  
+  
+  
+It is responsible for concatenating the `randomi` string with randomly selected elements of `colors`, generating a string `#4fd8aa` for example.
+At the end, `this.randomi='#';` is cleared to start a new color
+![Captura desde 2022-05-31 21-06-12](https://user-images.githubusercontent.com/106542070/171321116-b1ce0105-016e-476c-8e3b-adcea7d9df95.png)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+3. Color palette. I used the Iro.js color palette, take a look at their website https://iro.js.org/
+![Captura desde 2022-05-31 21-06-28](https://user-images.githubusercontent.com/106542070/171321443-505977bc-b8a7-4e5e-8e4d-5c866e6b1cb8.png)
+
