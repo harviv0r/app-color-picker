@@ -1,0 +1,9 @@
+.container-basic-colors {
+  height: calc(100% - 50px);
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
